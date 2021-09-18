@@ -1,0 +1,27 @@
+{
+    "name": "meet-in~server",
+    "version": "1.0.0",
+    "description": "server for meetin application",
+    "main": "app.js",
+    "engines": {
+        "node": "14.17.3"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "Mohamed Rizwan",
+    "license": "ISC",
+    "dependencies": {
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "moment": "^2.29.1",
+        "mongoose": "^5.13.2",
+        "socket.io": "^4.1.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}

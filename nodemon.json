@@ -1,0 +1,6 @@
+{
+    "env": {
+        "CLIENT_URL": "http://localhost:3000/",
+        "MONGOURL": "mongodb+srv://Md_Rizwan:F3gfynvk5sI6AYAI@cluster0.jio5i.mongodb.net/meet-in"
+    }
+}
