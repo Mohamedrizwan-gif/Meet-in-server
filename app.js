@@ -42,6 +42,12 @@ io.on('connection', socket => {
         if(meeting.meet_id) {
             socket.emit('created-meeting-id', meeting.meet_id);
         }
+        const userMeetings = await Meeting.find({creator_mail: usermail});
+        const recentmeetings = [];
+        userMeetings.forEach(user => {
+            recentmeetings.push({meet_id: user.meet_id, createdAt: user.createdAt})
+        });
+        socket.emit('login-credential', recentmeetings);
     });
     socket.on('create-instant-meeting', async({ID, username, usermail}) => {
         const meeting = await Meeting.create({
@@ -64,6 +70,7 @@ io.on('connection', socket => {
             });
         }
         if(findmeetcreator === null && findcreator !== null) {
+            socket.emit('enter-room', true);
             io.to(meetid).emit('verify-user', {
                 username: findcreator.creator_name,
                 usermail: findcreator.creator_mail,
